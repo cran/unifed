@@ -8,21 +8,21 @@ An R vignette introducing the unifed distribution and examples of how
 to use this package can be found at
 [https://oquijano.gitlab.io/unifed/](https://oquijano.gitlab.io/unifed/).
 
+## Important Note
+
+The current version (1.0.1) corrects an error in the function
+`unifed.kappa.prime.inverse`. In version 1.0 it returns values with
+the wrong sign when it's argument is less than 0.1.
+
+Please update to the current version to avoid this issue.
+
 
 ## Installation
 
-If you do not have `devtools` installed run
-`install.packages("devtools")` in your R console.
-
-If you are using windows you also need to install
-[Rtools](https://cran.r-project.org/bin/windows/Rtools/).
-
-
-Then the package can be installed directly from this repository by
-running the following in R
+You can install this package directly from CRAN by typing this in your R console.
 
 ```{r}
-devtools::install_git("https://gitlab.com/oquijano/unifed")
+install.packages("unifed")
 ```
 
 

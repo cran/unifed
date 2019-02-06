@@ -364,13 +364,13 @@ explanatory variables.
 ## Downloading and Preparing the Data
 
 The following line of code downloads a csv file containing the data and stores in the file `car.csv` in your working folder.
-```{r,results="hide",eval=TRUE}
+```{r,results="hide",eval=FALSE}
 download.file("http://www.businessandeconomics.mq.edu.au/our_departments/Applied_Finance_and_Actuarial_Studies/acst_docs/glms_for_insurance_data/data/car.csv",destfile="car.csv")
 ```
 
 The following block reads and aggregates the data using data frames
 
-```{r,results="hide",eval=TRUE}
+```{r,results="hide",eval=FALSE}
 car.data <- read.csv("car.csv")
 car.data$agecat <- factor(car.data$agecat)
 car.data$veh_age <- factor(car.data$veh_age)
@@ -386,7 +386,7 @@ agg.car.data$class.exposure <- agg.car.data$class.exposure / agg.car.data$weight
 
 Using `data.table` the same can be achieved with the following
 
-```{r,results="hide",eval=TRUE}
+```{r,results="hide",eval=FALSE}
 library(data.table)
 car.data <- fread("car.csv")
 car.data[,agecat:=factor(agecat)]
@@ -402,7 +402,7 @@ agg.car.data <- car.data[,.(class.exposure=sum(exposure)/.N,
 Now that we have an aggregated version of our data in the variable
 `agg.car.data`, we can fit a unifed GLM as follows
 
-```{r,results="hide",eval=TRUE}
+```{r,results="hide",eval=FALSE}
 exposure.model <- glm(class.exposure ~ gender + agecat + area + veh_age,
                  family=unifed(),
                  weights=weight,
@@ -418,13 +418,13 @@ function. For the unifed family, it is necessary to pass the argument
 `dispersion=1` explicitly. Otherwise we would be getting information
 for a unifed quasi family.
 
-```{r,eval=TRUE}
+```{r,eval=FALSE}
 summary(exposure.model)
 ```
 
 The following shows a plot of the deviance residuals for this model
 
-```{r,fig.align='center',eval=TRUE}
+```{r,fig.align='center',eval=FALSE}
 plot(predict(exposure.model, type="response"),
      residuals(exposure.model, type="deviance"),
      xlab="Predicted value",
@@ -438,7 +438,7 @@ example from the previous section to show explicitly what that means.
 
 Let us fit the glm again but without aggregating the data:
 
-```{r,eval=TRUE}
+```{r,eval=FALSE}
 exposure.model.2 <- glm(exposure ~ gender + agecat + area + veh_age,
                         family=unifed(),
                         data=car.data)

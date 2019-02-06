@@ -70,14 +70,18 @@ SEXP unifed_kappa_prime_inverse(SEXP mu_,SEXP tol_,SEXP maxit_,SEXP xinit_){
   double xinit = asReal(xinit_);
     
   double found_solution = 0;
+  double small_number=0;
   double y_prime;
   int iter=1;
   double old_x = xinit;
   double y;
   double new_x;
 
-  if( mu < 0.1)
-    mu = 1 - mu;
+  if( mu < 0.1){
+     mu = 1 - mu;
+     small_number=1;
+  }
+   
 
   if ( fabs(mu - 0.5) <= 0.0001 )
     return ScalarReal(0);
@@ -97,7 +101,7 @@ SEXP unifed_kappa_prime_inverse(SEXP mu_,SEXP tol_,SEXP maxit_,SEXP xinit_){
     }
 
     if (found_solution){
-      if( mu < 0.1)
+      if( small_number )
 	return ScalarReal(-new_x);
       else
 	return ScalarReal(new_x);
@@ -114,12 +118,16 @@ double kappa_prime_inverse(double mu, double tol, int maxit){
   double found_solution = 0;
   double y_prime;
   int iter=1;
+  double small_number=0;
   double old_x = 0;
   double y;
   double new_x;
 
-  if( mu < 0.1)
+  if( mu < 0.1){
     mu = 1 - mu;
+    small_number=1;
+  }
+
   
   if ( fabs(mu - 0.5) <= 0.0001 )
     return 0;
@@ -139,7 +147,7 @@ double kappa_prime_inverse(double mu, double tol, int maxit){
     }
 
     if (found_solution){
-      if (mu < 0.1)
+      if (small_number)
 	return -new_x;
       else
 	return new_x;

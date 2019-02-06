@@ -1,4 +1,4 @@
-af487460752a22d74f19513d7fd9f154 *DESCRIPTION
+5ea9a6e2c6278e3dbf06361dd6327f38 *DESCRIPTION
 1f14593fdae9328057e53441f20653e6 *NAMESPACE
 dfa125ee5b266fd3e2a47a8da47bcfa1 *R/dirwin.hall.R
 f2757132e44a7e2fc86e494e140e2fed *R/dunifed.R
@@ -8,11 +8,11 @@ e67fa11806ca3c759ac56553bd1f664c *R/summary_unifed_glm.R
 37e825f06579b4b2c758bcc6851d0cf0 *R/unifed.kappa.R
 7aa7d160accd44e2bc4ca44adc6de39c *R/unifed.varf.R
 d107da57f8fd4f8b5461dfda55901508 *R/zzz.R
-8b88335e4b660ccd759564cc8fea7e33 *README.md
-73aa477ccf3c7c59b857abc15da79794 *build/vignette.rds
+5d3b7de1ad0221fca9a37b7358ca4ba8 *README.md
+89fccd567e926662d80feaadf6998311 *build/vignette.rds
 0e57fd2f8b9ca3806b35e9e2b0164b97 *inst/doc/introduction_unifed.R
-4e130758dd6d12318c4e24a57f9243ef *inst/doc/introduction_unifed.Rmd
-6a45287d7991e5e06b634ab5956a13e0 *inst/doc/introduction_unifed.html
+aaaa8f6d17f32b4d0976394b3e7f23ec *inst/doc/introduction_unifed.Rmd
+358e372a684b614cb358b3b1037518b7 *inst/doc/introduction_unifed.html
 4e8c0a0cc72788425161fc37173b4ea7 *man/dirwin.hall.Rd
 49c483775cff05601eefbaab98435570 *man/dunifed.Rd
 7cfe0eaf19949070341752b444c40cd3 *man/summary_unifed_glm.Rd
@@ -20,6 +20,8 @@ d107da57f8fd4f8b5461dfda55901508 *R/zzz.R
 a719316ec3c55cf10b08485d9d720ed5 *man/unifed.deviance.Rd
 52832a88b93e87a388a99e873aa242f7 *man/unifed.kappa.Rd
 fdbfca941463b82b7350772ab5fbabed *man/unifed.varf.Rd
-217241e5407ed733438f7f3c6c0b5027 *src/unifed_kappa.c
+397dedc00189410e0157beab1cfb8b9b *src/unifed_kappa.c
+1c790fe953ea9463feee4ca9e12e77be *tests/testthat.R
+bef324c7f169fb8c914dd9d2e9e8cc95 *tests/testthat/tests.r
 2d8ce114754786b08468d15627a48cf0 *vignettes/bibliography.bib
 aaaa8f6d17f32b4d0976394b3e7f23ec *vignettes/introduction_unifed.Rmd
