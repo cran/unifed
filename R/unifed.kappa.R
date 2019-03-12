@@ -72,10 +72,6 @@ unifed.kappa.prime <- function(theta){
 #'
 #' @name unifed.kappa.double.prime
 #'
-#' Second derivative of the cumulant generator of the unifed distribution
-#'
-#' @inheritParams unifed.kappa
-#'
 #' @return \code{unifed.kappa.double.prime} returns a vector that
 #'     contains the second derivative of the cumulant generator of the
 #'     unifed distribution for each element of theta.
@@ -100,9 +96,8 @@ unifed.kappa.double.prime <- function(theta){
 #'
 #' @param ... Other parameters of \code{\link{unifed.kappa.prime.inverse.one}}
 #'
-#' @return \code{unifed.kappa.prime.inverse} returns a vector of the
-#'     same size then mu containing
-#'     \code{unifed.kappa.prime.inverse.one} evaluated at each entry
+#' @return \code{unifed.kappa.prime.inverse} returns a vector with
+#'     \code{unifed.kappa.prime.inverse.one} evaluated at every entry
 #'     of \code{mu}.
 #'
 #' @examples

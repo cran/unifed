@@ -10,9 +10,9 @@ to use this package can be found at
 
 ## Important Note
 
-The current version (1.0.1) corrects an error in the function
-`unifed.kappa.prime.inverse`. In version 1.0 it returns values with
-the wrong sign when it's argument is less than 0.1.
+The function `unifed.kappa.prime.inverse` in version 1.0 of the
+package returns values with the wrong sign when its argument is less
+than 0.1.
 
 Please update to the current version to avoid this issue.
 

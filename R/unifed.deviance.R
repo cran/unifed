@@ -37,9 +37,6 @@ unifed.deviance <- function(y.v,mu.v,wt=1,...){
 #' @rdname unifed.deviance
 #' 
 #' @name unifed.unit.deviance
-#' 
-#'
-#' Unit deviance function of the unifed distribution
 #'
 #' @param y A vector with values between 0 and 1.
 #'

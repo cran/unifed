@@ -3,9 +3,6 @@
 \name{unifed.kappa}
 \alias{unifed.kappa}
 \alias{unifed.kappa.prime}
-\alias{unifed.kappa.double.prime
-
-Second derivative of the cumulant generator of the unifed distribution}
 \alias{unifed.kappa.double.prime}
 \alias{unifed.kappa.prime.inverse}
 \alias{unifed.kappa.prime.inverse.one}
@@ -48,9 +45,8 @@ for convergence.}
     contains the second derivative of the cumulant generator of the
     unifed distribution for each element of theta.
 
-\code{unifed.kappa.prime.inverse} returns a vector of the
-    same size then mu containing
-    \code{unifed.kappa.prime.inverse.one} evaluated at each entry
+\code{unifed.kappa.prime.inverse} returns a vector with
+    \code{unifed.kappa.prime.inverse.one} evaluated at every entry
     of \code{mu}.
 
 \code{unifed.kappa.prime.inverse.one} if the tolerance

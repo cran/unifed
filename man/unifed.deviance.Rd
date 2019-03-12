@@ -2,10 +2,6 @@
 % Please edit documentation in R/unifed.deviance.R
 \name{unifed.deviance}
 \alias{unifed.deviance}
-\alias{unifed.unit.deviance
-
-
-Unit deviance function of the unifed distribution}
 \alias{unifed.unit.deviance}
 \title{Deviance of the unifed distribution}
 \usage{
