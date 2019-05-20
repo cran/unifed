@@ -1,0 +1,13 @@
+Version 1.1:
+* Added function unifed.canonical.link to R/unifed.R
+* Added "canonical" to the possible links of unifed().
+* Added unifed functions to use with stan
+* Added R/unifed.stan.path.R for getting the path to include in stan files.
+
+Version 1.0.2:
+* Fixed roxygen comments of R/unifed.kappa.R and
+  R/unifed.deviance.R that were generating wrong Rd files.
+
+Version 1.0.1:
+* Fixed bug in function unifed.kappa.prime.inverse. It was giving
+  the wrong sign for values smaller than 0.1

@@ -28,6 +28,41 @@ dunifed <- function(x,theta){
 }
 
 #' @rdname dunifed
+#  @name unifed.lcdf
+#'
+#' @return \code{unifed.lcdf} returns the log of the cumulative
+#'     distribution function of the unifed.
+#'
+#' @examples
+#' 
+#' x <- c(0.3,0.6,0.9)
+#' unifed.lcdf(x,5)
+#'
+#' @export
+unifed.lcdf <- function(x,theta){
+     if(length(theta) > 1)
+        stop("theta must be of length one")    
+    ret <- numeric(length(x))
+    less.than.zerop <- x<=0
+    greater.than.onep <- x>=1
+    between.zero.and.onep <- !( less.than.zerop  | greater.than.onep )
+    ret[less.than.zerop] <- -Inf
+    ret[greater.than.onep] <- 0
+
+    if ( abs(theta) <= sqrt(.Machine$double.eps) )
+        ret[ between.zero.and.onep ] <- log(x[between.zero.and.onep])
+    else{
+        x.subset <- x[between.zero.and.onep]
+        if(theta <= 50)
+            ret[ between.zero.and.onep ] <- log( expm1(x.subset*theta)   / expm1(theta)  )
+        else
+            ret[ between.zero.and.onep ] <- (x.subset-1)*theta + log(-expm1(-theta*x.subset)) - log(-expm1(-theta))
+    }
+    
+    ret
+}
+
+#' @rdname dunifed
 #' @name punifed
 #'
 #' @param q A vector of quantiles.
@@ -41,24 +76,7 @@ dunifed <- function(x,theta){
 #' 
 #' @export
 punifed <- function(q,theta){
-
-    if(length(theta) > 1)
-        stop("thetha must be of length one")    
-    ret <- numeric(length(q))
-    less.than.zerop <- q<=0
-    greater.than.onep <- q>=1
-    between.zero.and.onep <- !( less.than.zerop  | greater.than.onep )
-    ret[less.than.zerop] <- 0
-    ret[greater.than.onep] <- 1
-
-    if ( abs(theta) <= sqrt(.Machine$double.eps) )
-        ret[ between.zero.and.onep ] <- q[between.zero.and.onep]
-    else{
-        q.subset <- q[between.zero.and.onep]
-        ret[ between.zero.and.onep ] <- ( ( exp(q.subset*theta) -1 )  / ( exp(theta) -1 )  )
-    }
-    
-    ret
+    exp(unifed.lcdf(q,theta))    
 }
 
 

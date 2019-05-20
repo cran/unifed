@@ -2,12 +2,15 @@
 % Please edit documentation in R/dunifed.R
 \name{dunifed}
 \alias{dunifed}
+\alias{unifed.lcdf}
 \alias{punifed}
 \alias{qunifed}
 \alias{runifed}
 \title{The unifed distribution}
 \usage{
 dunifed(x, theta)
+
+unifed.lcdf(x, theta)
 
 punifed(q, theta)
 
@@ -29,6 +32,9 @@ runifed(n, theta)
 \value{
 \code{dunifed} gives the density function.
 
+\code{unifed.lcdf} returns the log of the cumulative
+    distribution function of the unifed.
+
 \code{punifed} gives the distribution function.
 
 \code{qunifed} gives the quantile function.
@@ -42,6 +48,10 @@ Density, distribution function, quantile function and
 \examples{
 
 dunifed( c(0.1,0.3,0.7), 10)
+
+
+x <- c(0.3,0.6,0.9)
+unifed.lcdf(x,5)
 
 
 x <- c(0.1,0.4,0.7,1)

@@ -1,8 +1,10 @@
 # Unifed
 
 The unifed distribution is the only exponential dispersion family
-containing the exponential distribution. This R package contains
-function for working with this distribution.
+containing the exponential distribution. This repository contains an R
+package for working with this
+distribution. [stan](https://mc-stan.org/) functions for the unifed
+distribution are also provided.
 
 An R vignette introducing the unifed distribution and examples of how
 to use this package can be found at

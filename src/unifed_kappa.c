@@ -46,7 +46,7 @@ double unifed_kappa_prime(double theta,double tol){
   if (fabs(theta) <= tol){
     return_value = 0.5;
   } else{
-    return_value = 1/(1-exp(-theta)) - 1/theta ;
+    return_value = -1/expm1(-theta) - 1/theta ;
     }
 return return_value;
 }
@@ -54,9 +54,9 @@ return return_value;
 double unifed_kappa_double_prime(double theta,double tol){
   double return_value;
   if (fabs(theta) <= tol){
-    return_value = 0.5;
+    return_value = 1./12.;
   }else{
-    return_value = pow(1/theta,2)  - exp(-theta)/pow(exp(-theta)-1,2);
+    return_value = pow(1/theta,2)  - exp(-theta)/pow(expm1(-theta),2);
   }
   return return_value;
 }
@@ -129,7 +129,7 @@ double kappa_prime_inverse(double mu, double tol, int maxit){
   }
 
   
-  if ( fabs(mu - 0.5) <= 0.0001 )
+  if ( fabs(mu - 0.5) <= 1e-5 )
     return 0;
   else{
 

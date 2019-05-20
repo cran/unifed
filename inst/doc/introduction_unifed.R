@@ -63,46 +63,46 @@ x <- seq(0,1,length.out=100)
 y <- unifed.varf(x)
 plot(x,y,type="l",xlab=expression(mu),ylab=expression(bold(V)(mu)),main="Unifed Variance Function")
 
-## ----results="hide",eval=FALSE-------------------------------------------
-#  download.file("http://www.businessandeconomics.mq.edu.au/our_departments/Applied_Finance_and_Actuarial_Studies/acst_docs/glms_for_insurance_data/data/car.csv",destfile="car.csv")
+## ----results="hide",eval=TRUE--------------------------------------------
+download.file("http://www.businessandeconomics.mq.edu.au/our_departments/Applied_Finance_and_Actuarial_Studies/acst_docs/glms_for_insurance_data/data/car.csv",destfile="car.csv")
 
-## ----results="hide",eval=FALSE-------------------------------------------
-#  car.data <- read.csv("car.csv")
-#  car.data$agecat <- factor(car.data$agecat)
-#  car.data$veh_age <- factor(car.data$veh_age)
-#  
-#  agg.car.data <- aggregate( cbind(exposure,rep(1, dim(car.data)[1] )) ~ gender + agecat + area + veh_age,
-#                            data=car.data,
-#                            FUN=sum)
-#  
-#  colnames(agg.car.data)[colnames(agg.car.data) == "V2"] <- "weight"
-#  colnames(agg.car.data)[colnames(agg.car.data) == "exposure"] <- "class.exposure"
-#  agg.car.data$class.exposure <- agg.car.data$class.exposure / agg.car.data$weight
+## ----results="hide",eval=TRUE--------------------------------------------
+car.data <- read.csv("car.csv")
+car.data$agecat <- factor(car.data$agecat)
+car.data$veh_age <- factor(car.data$veh_age)
 
-## ----results="hide",eval=FALSE-------------------------------------------
-#  library(data.table)
-#  car.data <- fread("car.csv")
-#  car.data[,agecat:=factor(agecat)]
-#  car.data[,veh_age:=factor(veh_age)]
-#  
-#  agg.car.data <- car.data[,.(class.exposure=sum(exposure)/.N,
-#                              weight=.N),
-#                              by=.(gender,agecat,area,veh_age)]
+agg.car.data <- aggregate( cbind(exposure,rep(1, dim(car.data)[1] )) ~ gender + agecat + area + veh_age,
+                          data=car.data,
+                          FUN=sum)
 
-## ----results="hide",eval=FALSE-------------------------------------------
-#  exposure.model <- glm(class.exposure ~ gender + agecat + area + veh_age,
-#                   family=unifed(),
-#                   weights=weight,
-#                   data=agg.car.data)
+colnames(agg.car.data)[colnames(agg.car.data) == "V2"] <- "weight"
+colnames(agg.car.data)[colnames(agg.car.data) == "exposure"] <- "class.exposure"
+agg.car.data$class.exposure <- agg.car.data$class.exposure / agg.car.data$weight
 
-## ----eval=FALSE----------------------------------------------------------
-#  summary(exposure.model)
+## ----results="hide",eval=TRUE--------------------------------------------
+library(data.table)
+car.data <- fread("car.csv")
+car.data[,agecat:=factor(agecat)]
+car.data[,veh_age:=factor(veh_age)]
 
-## ----fig.align='center',eval=FALSE---------------------------------------
-#  plot(predict(exposure.model, type="response"),
-#       residuals(exposure.model, type="deviance"),
-#       xlab="Predicted value",
-#       ylab="Deviance residuals")
+agg.car.data <- car.data[,.(class.exposure=sum(exposure)/.N,
+                            weight=.N),
+                            by=.(gender,agecat,area,veh_age)]
+
+## ----results="hide",eval=TRUE--------------------------------------------
+exposure.model <- glm(class.exposure ~ gender + agecat + area + veh_age,
+                 family=unifed(),
+                 weights=weight,
+                 data=agg.car.data)
+
+## ----eval=TRUE-----------------------------------------------------------
+summary(exposure.model)
+
+## ----fig.align='center',eval=TRUE----------------------------------------
+plot(predict(exposure.model, type="response"),
+     residuals(exposure.model, type="deviance"),
+     xlab="Predicted value",
+     ylab="Deviance residuals")
 
 ## ----eval=FALSE----------------------------------------------------------
 #  exposure.model.2 <- glm(exposure ~ gender + agecat + area + veh_age,
@@ -120,4 +120,25 @@ plot(x,y,type="l",xlab=expression(mu),ylab=expression(bold(V)(mu)),main="Unifed 
 #                          family=unifed(),
 #                          control=list(epsilon=1e-20,maxit=1e5),
 #                          data=car.data)
+
+## ----eval=FALSE----------------------------------------------------------
+#  X <- model.matrix( ~ gender + agecat + area + veh_age, agg.car.data)
+#  
+#  model.data <- list(M=dim(X)[1],
+#                     P=dim(X)[2],
+#                     X=X,
+#                     y= agg.car.data$class.exposure,
+#                     ws= agg.car.data$weight)
+#  
+
+## ----eval=FALSE----------------------------------------------------------
+#  library(rstan)
+#  model.list <- stanc_builder("unifed_example.stan",
+#                              isystem=unifed.stan.folder())
+#  
+#  m1 <- stan(model_code=model.list$model_code,
+#             data=model.data,
+#             warmup=3e3,
+#             iter=2e4,
+#             chains=4)
 
