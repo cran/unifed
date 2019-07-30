@@ -1,7 +1,7 @@
 Package: unifed
 Title: The Unifed Distribution
-Version: 1.1.0
-Date: 2019-05-17
+Version: 1.1.1
+Date: 2019-07-27
 Description: Probability functions and family for glm() of the unifed distribution (Quijano Xacur, 2018; <arXiv:1812.00251>).
 Depends: R (>= 3.1), methods
 License: GPL (>= 3)
@@ -13,6 +13,6 @@ VignetteBuilder: knitr
 Author: Oscar Alberto Quijano Xacur [aut,cre]
 Maintainer: Oscar Alberto Quijano Xacur <oscar.quijano@use.startmail.com>
 NeedsCompilation: yes
-Packaged: 2019-05-20 13:53:41 UTC; oscar
+Packaged: 2019-07-27 22:44:27 UTC; oscar
 Repository: CRAN
-Date/Publication: 2019-05-20 17:20:03 UTC
+Date/Publication: 2019-07-30 04:40:02 UTC

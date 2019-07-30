@@ -1,0 +1,15 @@
+citHeader("To cite the unifed package in publications use:")
+
+citEntry(entry = "Manual",
+  title        = "unifed: The unifed Distribution",
+  author       = person("Oscar Alberto","Quijano Xacur"),
+  year         = "2019",
+  note         = "R package version 1.1.1",
+  url          = "https://CRAN.R-project.org/package=unifed",
+
+  textVersion  =
+  paste("Oscar Alberto Quijano Xacur (2019).",
+        "unifed: The Unifed Distribution.",
+        "R package version 1.1.1.",
+        "URL https://CRAN.R-project.org/package=unifed")
+)

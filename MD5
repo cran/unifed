@@ -1,6 +1,6 @@
-fae84e5c585849b94446655fa95d6922 *ChangeLog
-4a405ba69cfa97b0d4cae9cd2e28dc8c *DESCRIPTION
-4d4d69c000d86b1b9f3c735181c288ca *NAMESPACE
+752b190e66061597ce0b2c7823d47495 *ChangeLog
+36b2f0ba602c4f88d3860820c82d7806 *DESCRIPTION
+190ad25a53316aae2456df7f462b72fb *NAMESPACE
 dfa125ee5b266fd3e2a47a8da47bcfa1 *R/dirwin.hall.R
 df13e6d7622d04f973aa7664ca130227 *R/doc-unifed_stan.R
 3810c704e8d8294233f8aabc3ea269b4 *R/dunifed.R
@@ -8,14 +8,16 @@ e67fa11806ca3c759ac56553bd1f664c *R/summary_unifed_glm.R
 97048cb4ab69a87084e6e1c8df575e84 *R/unifed.R
 61adc440861f4334cb98cd158eb1f536 *R/unifed.deviance.R
 e436bbef2c1433749a3e26be7ca08c4c *R/unifed.kappa.R
+3f2ccd5fb13cb0670cf2cb2329990d2d *R/unifed.mle.R
 36631861ede43aec23726456eb859984 *R/unifed.stan.path.R
 7aa7d160accd44e2bc4ca44adc6de39c *R/unifed.varf.R
 d107da57f8fd4f8b5461dfda55901508 *R/zzz.R
 c44f50d6b6e3e778143d1eb546c148f7 *README.md
 1a4fc81a0a84a7b2213ee4a85e9fc001 *build/vignette.rds
+d275efa908e63525a746db4d885a40e4 *inst/CITATION
 b055e618049cefa7ccae8c5c3a7207d9 *inst/doc/introduction_unifed.R
 1b245b107bcc83d963170693712efed3 *inst/doc/introduction_unifed.Rmd
-ec26f63b60c695f74d68352a4711e4a6 *inst/doc/introduction_unifed.html
+01e272dd2ca627a2a705dfda4f062b84 *inst/doc/introduction_unifed.html
 48764658f90c2ecc23dbaab161d73eca *inst/stan/unifed.stan
 4e8c0a0cc72788425161fc37173b4ea7 *man/dirwin.hall.Rd
 1d9a033a7ad29fdce341677cfde69dd9 *man/dunifed.Rd
@@ -23,6 +25,7 @@ ec26f63b60c695f74d68352a4711e4a6 *inst/doc/introduction_unifed.html
 794dbd69adf63b38fa66f23d9c18ef86 *man/unifed.Rd
 7ec848a088f49baed7e0306d7b92f824 *man/unifed.deviance.Rd
 d947d0d1eeffacf630a71777278aa001 *man/unifed.kappa.Rd
+710032b517377e38cdc63f052c622c7b *man/unifed.mle.Rd
 f23247936487979bba2a17db60723e2a *man/unifed.stan.Rd
 63d2733b217abfab8f6aa63c4439cb24 *man/unifed.stan.path.Rd
 fdbfca941463b82b7350772ab5fbabed *man/unifed.varf.Rd

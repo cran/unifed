@@ -1,3 +1,7 @@
+Version 1.1.1:
+* Added function unifed.mle
+* Added CITATION file
+
 Version 1.1:
 * Added function unifed.canonical.link to R/unifed.R
 * Added "canonical" to the possible links of unifed().
