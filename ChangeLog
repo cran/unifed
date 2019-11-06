@@ -1,3 +1,7 @@
+Version 1.1.2:
+* Updated references to published article
+* Fixed vigentte for CRAN
+
 Version 1.1.1:
 * Added function unifed.mle
 * Added CITATION file

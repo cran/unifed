@@ -1,5 +1,22 @@
 citHeader("To cite the unifed package in publications use:")
 
+citEntry(entry="Article",
+         title ="The unifed distribution",
+         author = person("Oscar Alberto","Quijano Xacur"),
+         journal="Journal of Statistical Distributions and Applications",
+         year="2019",
+         volume="6",
+         number="1",
+         pages="13",
+         doi="10.1186/s40488-019-0102-6",
+         textVersion  =
+             paste(
+                 "Quijano Xacur, O.A.",
+                 "The unifed distribution.",
+                 "J Stat Distrib App 6, 13 (2019).",
+                 "doi:10.1186/s40488-019-0102-6")                              
+)                  
+
 citEntry(entry = "Manual",
   title        = "unifed: The unifed Distribution",
   author       = person("Oscar Alberto","Quijano Xacur"),

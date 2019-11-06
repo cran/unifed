@@ -27,7 +27,8 @@
 #'     element of theta.
 #'
 #' @references{
-#' Quijano Xacur, Oscar Alberto (2018). The Unifed Distribution. ArXiv. \url{http://arxiv.org/abs/1812.00251}.
+#' Quijano Xacur, O.A. The unifed distribution. J Stat Distrib App 6, 13 (2019).
+#' doi:10.1186/s40488-019-0102-6.
 #'
 #' Jørgensen, Bent (1997). The  Theory  of  Dispersion  Models.
 #' Chapman  &  Hall, London.
