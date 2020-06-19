@@ -49,8 +49,6 @@ unifed.kappa <- function(theta){
 #' @rdname unifed.kappa
 #' 
 #' @name unifed.kappa.prime
-#'
-#' @inheritParams unifed.kappa
 #' 
 #' @return \code{unifed.kappa.prime} returns a vector that contains
 #'     the derivative of the cumulant generator of the unifed

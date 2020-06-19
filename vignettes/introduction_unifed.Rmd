@@ -367,7 +367,7 @@ explanatory variables.
 
 The following line of code downloads a csv file containing the data and stores in the file `car.csv` in your working folder.
 ```{r,results="hide",eval=TRUE}
-download.file("http://www.businessandeconomics.mq.edu.au/our_departments/Applied_Finance_and_Actuarial_Studies/acst_docs/glms_for_insurance_data/data/car.csv",destfile="car.csv")
+download.file("http://www.businessandeconomics.mq.edu.au/__data/assets/file/0011/232310/car.csv",destfile="car.csv")
 ```
 
 The following block reads and aggregates the data using data frames
