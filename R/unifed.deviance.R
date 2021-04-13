@@ -40,7 +40,7 @@ unifed.deviance <- function(y.v,mu.v,wt=1,...){
 #'
 #' @param y A vector with values between 0 and 1.
 #'
-#' @param mu A vector with values betwee0 and 1.
+#' @param mu A vector with values between 0 and 1.
 #'
 #' @param tol Tolerance level for the Newton-Raphson algorithm for
 #'     computing the inverse of the derivative of the cumulant

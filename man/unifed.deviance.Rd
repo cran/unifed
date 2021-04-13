@@ -22,7 +22,7 @@ only.}
 
 \item{y}{A vector with values between 0 and 1.}
 
-\item{mu}{A vector with values betwee0 and 1.}
+\item{mu}{A vector with values between 0 and 1.}
 
 \item{tol}{Tolerance level for the Newton-Raphson algorithm for
 computing the inverse of the derivative of the cumulant

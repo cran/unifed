@@ -1,5 +1,11 @@
+Version 1.1.5:
+* Added data for vigenette car insurance example
+	
+Version 1.1.4:
+* Fixed typos and errors in documentation
+
 Version 1.1.3:
-* Updated car.csv link in vignette	
+* Updated car.csv link in vignette
 
 Version 1.1.2:
 * Updated references to published article

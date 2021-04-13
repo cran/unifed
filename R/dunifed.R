@@ -22,7 +22,7 @@
 #' @export
 dunifed <- function(x,theta){
     if(length(theta) > 1)
-        stop("thetha must be of length one")
+        stop("theta must be of length one")
     ifelse( x < 0 | x > 1,
            0,
            exp( x * theta - unifed.kappa(theta) ))

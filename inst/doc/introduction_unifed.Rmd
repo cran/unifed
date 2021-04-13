@@ -321,9 +321,10 @@ can be used with the `glm` function of R. This section gives an
 example of how to prepare a dataset and fit a unifed GLM.
 
 The data from this section appears in @glm-insurance-book. It is based
-on 67,856 one–year auto in- surance policies from 2004 or 2005. It can
-be downloaded from the [companion site of the
-book](http://www.acst.mq.edu.au/GLMsforInsuranceData), as the dataset
+on 67,856 one–year auto in- surance policies from 2004 or 2005. It
+comes with the package in the variable `car.insurance` and it is
+lazily loaded. The original csv file can be downloaded from the [companion site of the
+book](http://www.businessandeconomics.mq.edu.au/our_departments/Applied_Finance_and_Actuarial_Studies/research/books/GLMsforInsuranceData), as the dataset
 called Car. The following text is the description of the variables
 provided by the website of the book
 ```
@@ -363,22 +364,16 @@ time in a year in which the insurance policy is in-force for a given
 client. We use `gender`, `agecat`, `area` and `veh_age` as the
 explanatory variables.
 
-## Downloading and Preparing the Data
+## Preparing the Data
 
-The following line of code downloads a csv file containing the data and stores in the file `car.csv` in your working folder.
-```{r,results="hide",eval=TRUE}
-download.file("http://www.businessandeconomics.mq.edu.au/__data/assets/file/0011/232310/car.csv",destfile="car.csv")
-```
-
-The following block reads and aggregates the data using data frames
+The following block aggregates the data using data frames
 
 ```{r,results="hide",eval=TRUE}
-car.data <- read.csv("car.csv")
-car.data$agecat <- factor(car.data$agecat)
-car.data$veh_age <- factor(car.data$veh_age)
+car.insurance$agecat <- factor(car.insurance$agecat)
+car.insurance$veh_age <- factor(car.insurance$veh_age)
 
-agg.car.data <- aggregate( cbind(exposure,rep(1, dim(car.data)[1] )) ~ gender + agecat + area + veh_age,
-                          data=car.data,
+agg.car.data <- aggregate( cbind(exposure,rep(1, dim(car.insurance)[1] )) ~ gender + agecat + area + veh_age,
+                          data=car.insurance,
                           FUN=sum)
 
 colnames(agg.car.data)[colnames(agg.car.data) == "V2"] <- "weight"
@@ -390,13 +385,13 @@ Using `data.table` the same can be achieved with the following
 
 ```{r,results="hide",eval=TRUE}
 library(data.table)
-car.data <- fread("car.csv")
-car.data[,agecat:=factor(agecat)]
-car.data[,veh_age:=factor(veh_age)]
+car.insurance <- data.table(car.insurance)
+car.insurance[,agecat:=factor(agecat)]
+car.insurance[,veh_age:=factor(veh_age)]
 
-agg.car.data <- car.data[,.(class.exposure=sum(exposure)/.N,
-                            weight=.N),
-                            by=.(gender,agecat,area,veh_age)]
+agg.car.data <- car.insurance[,.(class.exposure=sum(exposure)/.N,
+                              weight=.N),
+                              by=.(gender,agecat,area,veh_age)]
 ```
 
 ## Fitting and Diagnostics
@@ -421,7 +416,7 @@ function. For the unifed family, it is necessary to pass the argument
 for a unifed quasi family.
 
 ```{r,eval=TRUE}
-summary(exposure.model)
+summary(exposure.model,dispersion=1)
 ```
 
 The following shows a plot of the deviance residuals for this model
@@ -443,7 +438,7 @@ Let us fit the glm again but without aggregating the data:
 ```{r,eval=FALSE}
 exposure.model.2 <- glm(exposure ~ gender + agecat + area + veh_age,
                         family=unifed(),
-                        data=car.data)
+                        data=car.insurance)
 ```
 
 If you see the coefficients of the model above and compare them to the
@@ -472,7 +467,7 @@ exposure.model <- glm(class.exposure ~ gender + agecat + area + veh_age,
 exposure.model.2 <- glm(exposure ~ gender + agecat + area + veh_age,
                         family=unifed(),
                         control=list(epsilon=1e-20,maxit=1e5),
-                        data=car.data)
+                        data=car.insurance)
 ```
 
 ## Bayesian Unifed GLM

@@ -20,13 +20,13 @@ citEntry(entry="Article",
 citEntry(entry = "Manual",
   title        = "unifed: The unifed Distribution",
   author       = person("Oscar Alberto","Quijano Xacur"),
-  year         = "2019",
-  note         = "R package version 1.1.1",
+  year         = "2021",
+  note         = "R package version 1.1.5",
   url          = "https://CRAN.R-project.org/package=unifed",
 
   textVersion  =
-  paste("Oscar Alberto Quijano Xacur (2019).",
+  paste("Oscar Alberto Quijano Xacur (2021).",
         "unifed: The Unifed Distribution.",
-        "R package version 1.1.1.",
+        "R package version 1.1.5.",
         "URL https://CRAN.R-project.org/package=unifed")
 )
