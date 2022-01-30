@@ -1,6 +1,10 @@
+Version 1.1.6:
+* Corrected unclosed alias in documentation
+* Beta regression paper reference now uses doi link
+
 Version 1.1.5:
 * Added data for vigenette car insurance example
-	
+
 Version 1.1.4:
 * Fixed typos and errors in documentation
 

@@ -3,13 +3,6 @@
 \name{unifed}
 \alias{unifed}
 \alias{quasiunifed}
-\alias{unifed.canonical.link
-
-This function is used inside of \code{unifed()} when the link
-parameter is set to \code{"canonical"}. It returns the link
-function, inverse link function, the derivative dmu/deta and a
-function for domain checking for the unifed distribution canonical
-link.}
 \alias{unifed.canonical.link}
 \title{Family object for the unifed distribution}
 \usage{
@@ -52,6 +45,12 @@ The link 'canonical' is not part of the standard names accepted by
  explicit formula for it. The function
  \code{\link{unifed.kappa.prime.inverse}()} implements it using the
  Newthon-Raphson method.
+
+This function is used inside of \code{unifed()} when the link
+parameter is set to \code{"canonical"}. It returns the link
+function, inverse link function, the derivative dmu/deta and a
+function for domain checking for the unifed distribution canonical
+link.
 }
 \references{
 {

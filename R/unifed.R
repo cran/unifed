@@ -171,7 +171,7 @@ quasiunifed <- function(link="logit",...){
 #' @rdname unifed
 #' @name unifed.canonical.link
 #'
-#' This function is used inside of \code{unifed()} when the link
+#' @details This function is used inside of \code{unifed()} when the link
 #' parameter is set to \code{"canonical"}. It returns the link
 #' function, inverse link function, the derivative dmu/deta and a
 #' function for domain checking for the unifed distribution canonical
